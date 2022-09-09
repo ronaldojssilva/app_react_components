@@ -10,7 +10,7 @@ export default class TodoForm extends Component{
 
     onAdd = (event) => {
         event.preventDefault();
-        if (todo) {
+        if (this.state.todo) {
             this.props.pushToItems(this.state.todo);
         }
     }
