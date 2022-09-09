@@ -3,6 +3,7 @@ import React, {Component} from "react";
 export default class TodoForm extends Component{
     constructor (props){
         super(props);
+        console.log(`TodoForm.js PROPS:  ${props}`);
         this.state = {
             todo: ''
         };
@@ -10,8 +11,12 @@ export default class TodoForm extends Component{
 
     onAdd = (event) => {
         event.preventDefault();
-        if (this.state.todo) {
-            this.props.pushToItems(this.state.todo);
+        const {todo} = this.state;
+        if (todo) {
+            this.props.pushToItems(todo);
+            this.setState({
+                todo: ''
+            });
         }
     }
 
@@ -20,9 +25,10 @@ export default class TodoForm extends Component{
     }
     
     render(){
+        const {todo} = this.state;
         return(
             <div>
-                <input type="text" name='todo' placeholder='Enter todo here' onChange={this.onChange}/>
+                <input type="text" value={todo} name='todo' placeholder='Enter todo here' onChange={this.onChange}/>
                 <button type='button' onClick={this.onAdd}>Create</button>
             </div>
         );

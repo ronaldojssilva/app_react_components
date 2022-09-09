@@ -16,6 +16,7 @@ import TodoListItem from "./TodoListItem";
 
 //2 FORMA: stateless, não guarda estado.
 export const TodoList = (props) => {
+    const {items} = props;
     return(
         <ul>
             {items.map((item, index) => (

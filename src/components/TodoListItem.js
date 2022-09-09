@@ -6,8 +6,9 @@ export default class TodoListItem extends Component{
     }
 
     render(){
+        const {item} = this.props;
         return(
-            <li>Item 1</li>
+            <li>{item}</li>
         );
     }
 }
