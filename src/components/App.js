@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import TodoForm from './TodoForm';
 
 export default class App extends Component{
   constructor(props){
@@ -28,6 +29,7 @@ export default class App extends Component{
       <input type="text" name='todo' placeholder='Enter todo here' 
               onChange={this.onChange}/>
       <button type='button' onClick={this.pushToItems}>Create</button>
+      <TodoForm/>
       <hr/>
       <ul>
         {items.map((item, index) => (
