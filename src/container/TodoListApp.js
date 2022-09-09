@@ -16,6 +16,12 @@ export default class TodoListApp extends Component{
             items: [...items, todo]
         });
     }
+
+    removeFromItems = (index) => {
+        const {items} = this.state;
+        items.splice(index, 1);
+        this.setState({items});
+    }
     
     render(){
         const {items} = this.state;
@@ -23,7 +29,7 @@ export default class TodoListApp extends Component{
             <div id="app">
                 <TodoForm pushToItems={this.pushToItems}/>
                 <hr/>
-                <TodoList items={items}/>
+                <TodoList items={items} removeFromItems={this.removeFromItems}/>
             </div>
         );
     }

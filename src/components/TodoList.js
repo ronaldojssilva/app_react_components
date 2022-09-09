@@ -16,11 +16,11 @@ import TodoListItem from "./TodoListItem";
 
 //2 FORMA: stateless, não guarda estado.
 export const TodoList = (props) => {
-    const {items} = props;
+    const {items, removeFromItems} = props;
     return(
         <ul>
             {items.map((item, index) => (
-                <TodoListItem key={index} item={item}/>
+                <TodoListItem key={index} index={index} item={item} removeFromItems = {removeFromItems}/>
             ))}
         </ul>
     )
