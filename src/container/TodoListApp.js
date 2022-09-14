@@ -12,6 +12,13 @@ export default class TodoListApp extends Component{
         }
     }
 
+    componentDidMount(){
+        fetch('https://jsonplaceholder.typicode.com/todos')
+        .then(response => response.json())
+        .then(json => {
+           this.setState({items: json}); 
+        });
+    }
     pushToItems = (todo) =>{
         const {items} = this.state;
         this.setState({
