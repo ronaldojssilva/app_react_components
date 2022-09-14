@@ -4,12 +4,13 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.css'
 //import App from './components/App';
 import TodoListApp from './container/TodoListApp';
+import WeatherApp from './container/WeatherApp';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <TodoListApp />
+    <WeatherApp />
   </React.StrictMode>
 );
 
